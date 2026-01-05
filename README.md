@@ -28,7 +28,8 @@ The system is designed to mirror real-world **enterprise ML monitoring**, emphas
 
 ## Architecture / Workflow
 
-![System Architecture](docs/images/architecture.png)
+![System Architecture](assets/Arcitecture%20Image%20Jan%205,%202026,%2003_12_00%20PM.png)
+
 
 
 
