@@ -79,3 +79,105 @@ data-drift-monitoring/
 git clone <your-repo-url>
 cd data-drift-monitoring
 docker compose build
+
+
+
+```
+
+##  Usage - How to run the system
+
+This project runs as two Docker services:
+- A monitoring job that computes data quality checks and data drift metrics
+- A FastAPI service that serves reports and metrics via HTTP endpoints
+
+### Prerequisites
+
+Ensure the following are installed and running:
+
+- Docker Desktop
+- Docker Compose (included with Docker Desktop)
+
+Verify Docker is running:
+docker info
+
+
+### Build Docker Images
+
+Build all required images before running the services.
+
+```bash
+docker compose build
+```
+
+
+This step is required on first setup or after code or dependency changes.
+
+### Start the API Service
+
+Start the FastAPI service that serves drift reports and metrics.
+
+```bash
+docker compose up api
+```
+
+
+Once running, the service is available at:
+
+http://localhost:8000/latest-report
+ – View the latest drift report
+
+http://localhost:8000/metrics
+ – View drift metrics in JSON format
+
+http://localhost:8000/health
+ – API health check
+
+Keep this service running while using the system.
+
+### Run the Drift Monitoring Job
+
+Execute the monitoring job to analyze data and generate reports.
+
+```bash
+docker compose run --rm monitor
+``` 
+
+This job performs the following steps:
+
+Loads reference and current datasets
+
+Runs data quality validation using Great Expectations
+
+Computes data drift metrics using Evidently
+
+Saves HTML reports and JSON metrics
+
+After completion, refresh the /latest-report endpoint to view updated results.
+
+### Typical Workflow
+docker compose up api
+docker compose run --rm monitor
+
+
+The API service remains running, and the monitoring job is executed whenever new data arrives.
+
+### Stop Services
+
+To stop the running API service:
+
+CTRL + C
+
+
+To remove containers:
+
+```bash
+docker compose down
+```
+
+### Verify the System
+
+Verify the system is working by calling the metrics endpoint:
+
+```bash
+curl http://localhost:8000/metrics
+```
