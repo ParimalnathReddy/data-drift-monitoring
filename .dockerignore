@@ -1,0 +1,13 @@
+cat > .dockerignore << 'EOF'
+.venv
+__pycache__/
+*.pyc
+.git/
+.gitignore
+data/
+reports/
+monitoring.db
+*.parquet
+*.csv
+.DS_Store
+EOF

@@ -1,0 +1,10 @@
+pandas
+fastapi
+uvicorn[standard]
+pydantic
+sqlalchemy
+evidently
+great-expectations
+prefect
+pytest
+python-dotenv
