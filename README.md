@@ -28,35 +28,7 @@ The system is designed to mirror real-world **enterprise ML monitoring**, emphas
 
 ## Architecture / Workflow
 
-                ┌──────────────────────┐
-                │   GitHub Actions     │
-                │  (Daily Schedule)    │
-                └─────────┬────────────┘
-                          │
-                          ▼
-┌──────────────┐   ┌───────────────────┐
-│ Reference    │   │ Current Data       │
-│ Dataset      │   │ (New Batch)        │
-└──────┬───────┘   └─────────┬─────────┘
-       │                     │
-       ▼                     ▼
-   Data Extraction & Sampling
-              │
-              ▼
-   Data Quality Checks (Great Expectations)
-              │
-              ▼
-   Data Drift Detection (Evidently)
-              │
-              ▼
-   ┌───────────────────────────────────┐
-   │ Reports (HTML + JSON)              │
-   │ Run Metadata (SQLite)              │
-   └───────────────────────────────────┘
-              │
-              ▼
-        FastAPI Service
-   (/health, /latest-report, /metrics)
+![System Architecture](docs/images/architecture.png)
 
 
 
