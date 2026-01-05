@@ -49,7 +49,7 @@ The system is designed to mirror real-world **enterprise ML monitoring**, emphas
 ---
 
 ## Project Structure
-
+```text
 data-drift-monitoring/
 ├── src/
 │   ├── monitor/        # Data extraction, validation, drift detection
