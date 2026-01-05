@@ -50,21 +50,23 @@ The system is designed to mirror real-world **enterprise ML monitoring**, emphas
 
 ## Project Structure
 
-.
-├── .github/                # CI/CD automation
-├── data/                   # Raw and sampled datasets
-├── reports/                # Generated HTML & JSON drift reports
+data-drift-monitoring/
 ├── src/
-│   ├── api/                # FastAPI service layer
-│   ├── database/           # SQLite persistence & metadata
-│   ├── drift/              # Evidently drift detection logic
-│   ├── extraction/         # Data sampling & ingestion
-│   ├── quality/            # Great Expectations validation
-│   └── main.py             # Pipeline orchestration
-├── tests/                  # Unit and integration tests
+│   ├── monitor/        # Data extraction, validation, drift detection
+│   ├── app/            # FastAPI application
+│   └── utils/          # Shared utilities
+├── great_expectations/ # Data quality expectations
+├── reports/
+│   ├── html/           # Drift reports
+│   └── json/           # Metrics snapshots
+├── data/
+│   ├── reference/      # Baseline dataset
+│   └── current/        # Incoming dataset
+├── .github/workflows/
+│   └── daily_monitor.yml
 ├── Dockerfile
 ├── docker-compose.yml
-└── requirements.txt
+└── README.md
 
 
 
