@@ -1,10 +1,26 @@
 # Data Drift & Data Quality Monitoring System
 
 ## Overview
-This project implements a production-style **data drift and data quality monitoring system** for machine learning pipelines.  
-It compares incoming (current) data against a trusted reference dataset to detect schema issues, data quality failures, and statistical drift before downstream models are impacted.
+This project implements a production-style **data drift monitoring system** for machine learning pipelines. It continuously validates incoming data, detects distribution shifts, and exposes drift metrics and reports via an API.
 
-The system is designed to mirror real-world **enterprise ML monitoring**, emphasizing automation, auditability, and reproducibility.
+**Why this matters:**
+In real ML systems, models rarely fail because of bad code — they fail because data silently changes.
+This system catches those failures before they impact downstream predictions, dashboards, or business decisions.
+
+**What Problem This Solves:**
+
+In production environments:
+Training data ≠ live data
+Schema changes go unnoticed
+Feature distributions drift over time
+Model performance degrades silently
+
+**This project addresses those issues by:**
+
+Enforcing data quality contracts
+Detecting statistical drift
+Persisting historical monitoring state
+Making drift observable via APIs and reports
 
 ---
 
