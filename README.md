@@ -10,17 +10,18 @@ This system catches those failures before they impact downstream predictions, da
 **What Problem This Solves:**
 
 In production environments:
-Training data ≠ live data
-Schema changes go unnoticed
-Feature distributions drift over time
-Model performance degrades silently
+
+- Training data ≠ live data
+- Schema changes go unnoticed
+- Feature distributions drift over time
+- Model performance degrades silently
 
 **This project addresses those issues by:**
 
-Enforcing data quality contracts
-Detecting statistical drift
-Persisting historical monitoring state
-Making drift observable via APIs and reports
+- Enforcing data quality contracts
+- Detecting statistical drift
+- Persisting historical monitoring state
+- Making drift observable via APIs and reports
 
 ---
 
