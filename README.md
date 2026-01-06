@@ -134,7 +134,12 @@ This step is required on first setup or after code or dependency changes.
 Start the FastAPI service that serves drift reports and metrics.
 
 ```bash
-docker compose up api
+git clone https://github.com/ParimalnathReddy/data-drift-monitoring
+cd data-drift-monitoring
+
+docker compose up -d api
+docker compose run --rm monitor
+
 ```
 
 
